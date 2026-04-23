@@ -1,10 +1,16 @@
 import os
 import sys
 
-sys.path.insert(0, '/home/unitestm/django-app')
-sys.path.insert(0, '/home/unitestm/django-app/a_mysite')
+try:
+    BASE_DIR = '/home/unitestm/django-app'
+    sys.path.insert(0, BASE_DIR)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'a_mysite.settings'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'a_mysite.settings'
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+    from django.core.wsgi import get_wsgi_application
+    application = get_wsgi_application()
+
+except Exception as e:
+    with open('/home/unitestm/logs/passenger_error.log', 'a') as f:
+        f.write(str(e) + '\n')
+    raise
