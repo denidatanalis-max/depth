@@ -2,7 +2,7 @@ import os
 import sys
 
 try:
-    BASE_DIR = '/home/unitestm/django-app'
+    BASE_DIR = '/home/unitestm/depth'
     sys.path.insert(0, BASE_DIR)
 
     os.environ['DJANGO_SETTINGS_MODULE'] = 'a_mysite.settings'
