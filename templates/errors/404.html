@@ -12,9 +12,9 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            background:#000000; /* merah elegan */
-            color:#ffffff;
-            font-family: Arial, Helvetica, sans-serif;
+            background:#000;
+            color:#fff;
+            font-family:Arial, sans-serif;
             text-align:center;
         }
 
@@ -22,37 +22,39 @@
             padding:20px;
         }
 
-        h1{
-            font-size:80px;
+        .code{
+            font-size:90px;
             margin:0;
-            font-weight:700;
+            color:#ff4da6;
+            text-shadow:0 0 15px rgba(255,77,166,0.6);
         }
 
         h2{
-            font-size:22px;
             margin:10px 0;
-            font-weight:500;
+            font-size:22px;
+            color:#ffb3d9;
         }
 
         p{
             font-size:14px;
-            opacity:0.9;
+            color:#f8c6dc;
+            line-height:1.6;
         }
 
         a{
             display:inline-block;
             margin-top:20px;
             padding:10px 20px;
-            border:1px solid #fff;
-            color:#fff;
+            border:1px solid #ff4da6;
+            color:#ff4da6;
             text-decoration:none;
-            border-radius:6px;
+            border-radius:8px;
             transition:0.2s;
         }
 
         a:hover{
-            background:#fff;
-            color:#000000;
+            background:#ff4da6;
+            color:#000;
         }
     </style>
 </head>
@@ -60,16 +62,21 @@
 <body>
 
     <div class="box">
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <p>Halaman tidak ditemukan atau sudah dipindahkan.</p>
+        <div class="code">404</div>
+        <h2>ehhh kok nyasar sih bestiee 😭</h2>
+        <p>
+            halaman yang kamu cari gak ada yaa~<br>
+            mungkin URL-nya salah atau udah pindah , ke lain 💔
+        </p>
 
-        <a href="/">Kembali ke Dashboard</a>
+        <a href="/">balik ke dashboard 💖</a>
     </div>
+
     <script>
         setTimeout(function () {
             window.location.href = "/";
-        }, 1500);
+        }, 3000);
     </script>
+
 </body>
 </html>

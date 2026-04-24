@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Not Found</title>
+    <title>500 - Server Error</title>
 
     <style>
         body{
@@ -12,9 +12,9 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            background:#000000; /* merah elegan */
-            color:#ffffff;
-            font-family: Arial, Helvetica, sans-serif;
+            background:#000;
+            color:#fff;
+            font-family:Arial, sans-serif;
             text-align:center;
         }
 
@@ -22,37 +22,39 @@
             padding:20px;
         }
 
-        h1{
-            font-size:80px;
+        .code{
+            font-size:90px;
             margin:0;
-            font-weight:700;
+            color:#ff66b2;
+            text-shadow:0 0 15px rgba(255,102,178,0.6);
         }
 
         h2{
-            font-size:22px;
             margin:10px 0;
-            font-weight:500;
+            font-size:22px;
+            color:#ffcce6;
         }
 
         p{
             font-size:14px;
-            opacity:0.9;
+            color:#f8c6dc;
+            line-height:1.6;
         }
 
         a{
             display:inline-block;
             margin-top:20px;
             padding:10px 20px;
-            border:1px solid #fff;
-            color:#fff;
+            border:1px solid #ff66b2;
+            color:#ff66b2;
             text-decoration:none;
-            border-radius:6px;
+            border-radius:8px;
             transition:0.2s;
         }
 
         a:hover{
-            background:#fff;
-            color:#e11d48;
+            background:#ff66b2;
+            color:#000;
         }
     </style>
 </head>
@@ -61,15 +63,20 @@
 
     <div class="box">
         <div class="code">500</div>
-        <h2>Server Error</h2>
-        <p>Maaf, terjadi kesalahan pada sistem. Tim kami sedang bekerja untuk memperbaikinya.</p>
+        <h2>aduhhh servernya ngambek 😭</h2>
+        <p>
+            jangan panik ya bestie 💔<br>
+            lagi aku benerin biar dia gak drama lagi ✨
+        </p>
 
-        <a href="/">Kembali ke Dashboard</a>
+        <a href="/">balik dulu yaa 💖</a>
     </div>
+
     <script>
         setTimeout(function () {
             window.location.href = "/";
-        }, 1500);
+        }, 3000);
     </script>
+
 </body>
 </html>
