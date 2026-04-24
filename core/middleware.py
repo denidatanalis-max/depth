@@ -8,6 +8,6 @@ class UnderConstructionMiddleware:
     def __call__(self, request):
 
         if settings.DEBUG and not request.path.startswith("/api/"):
-            return render(request, "under_construction.html", status=503)
+            return render(request, "errors/under_construction.html", status=503)
 
         return self.get_response(request)

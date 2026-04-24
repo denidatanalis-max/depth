@@ -27,6 +27,22 @@
             margin:0;
             color:#ff4da6;
             text-shadow:0 0 15px rgba(255,77,166,0.6);
+            animation: colorChange 2.5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color:#ff4da6;
+                text-shadow:0 0 15px rgba(255,77,166,0.6);
+            }
+            50% {
+                color:#000;
+                text-shadow:0 0 20px rgba(255,255,255,0.8);
+            }
+            100% {
+                color:#ff4da6;
+                text-shadow:0 0 15px rgba(255,77,166,0.6);
+            }
         }
 
         h2{
@@ -68,14 +84,14 @@
             halaman yang kamu cari gak ada yaa~<br>
             mungkin URL-nya salah atau udah pindah , ke lain 💔
         </p>
-
-        <a href="/">balik ke dashboard 💖</a>
+        <p>aku usir ya 3-2-1 , <span style="color:#ff4da6;">dadah</span> . . .</p>
+        <!-- <a href="/">balik ke dashboard 💖</a> -->
     </div>
 
     <script>
         setTimeout(function () {
             window.location.href = "/";
-        }, 3000);
+        }, 5000);
     </script>
 
 </body>

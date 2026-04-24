@@ -25,8 +25,24 @@
         .code{
             font-size:90px;
             margin:0;
-            color:#ff66b2;
-            text-shadow:0 0 15px rgba(255,102,178,0.6);
+            color:#ff4da6;
+            text-shadow:0 0 15px rgba(255,77,166,0.6);
+            animation: colorChange 2.5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color:#ff4da6;
+                text-shadow:0 0 15px rgba(255,77,166,0.6);
+            }
+            50% {
+                color:#000;
+                text-shadow:0 0 20px rgba(255,255,255,0.8);
+            }
+            100% {
+                color:#ff4da6;
+                text-shadow:0 0 15px rgba(255,77,166,0.6);
+            }
         }
 
         h2{
@@ -68,14 +84,14 @@
             jangan panik ya bestie 💔<br>
             lagi aku benerin biar dia gak drama lagi ✨
         </p>
-
-        <a href="/">balik dulu yaa 💖</a>
+        <p>aku usir ya 3 2 1 , <span style="color:#ff4da6;">dadah</span> . . .</p>
+        <!-- <a href="/">balik dulu yaa 💖</a> -->
     </div>
 
     <script>
         setTimeout(function () {
             window.location.href = "/";
-        }, 3000);
+        }, 5000);
     </script>
 
 </body>
