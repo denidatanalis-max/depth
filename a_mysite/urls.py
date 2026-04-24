@@ -9,3 +9,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls')),
 ]
+
+handler404 = 'core.views.custom_404'
+handler500 = 'core.views.custom_500'

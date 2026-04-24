@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y*!e9lb=scg^91nb^*ds97*#lf#35%arz&!27ifyzm8xcp16y%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['unitest.my.id', 'www.unitest.my.id', '127.0.0.1', 'localhost']
 
@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['unitest.my.id', 'www.unitest.my.id', '127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
     'dashboard',
     'accounts',
     'django.contrib.admin',
