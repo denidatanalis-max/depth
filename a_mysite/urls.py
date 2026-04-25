@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.shortcuts import redirect
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('login/', lambda r: redirect('/accounts/login/', permanent=False)),
     path('logout/', lambda r: redirect('/accounts/logout/', permanent=False)),
     path('accounts/', include('accounts.urls')),
