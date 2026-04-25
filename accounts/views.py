@@ -7,6 +7,8 @@ from .forms import LoginForm
 
 def login_view(request):
     if request.user.is_authenticated:
+        if request.user.role == request.user.SUPERADMIN:
+            return redirect('/admin/')
         return redirect('/')
 
     form = LoginForm(request, data=request.POST or None)
