@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Studio</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #0b0b0f;
+            color: #f5f3ee;
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login_siplay{
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 1100px;
+        }
+        .kiri {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            background: rgba(255,255,255,0.03);
+            border: 0.5px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 2rem;
+            height: 500px;
+        }
+        .login-wrap {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        .login-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .login-logo-text .logo-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #f5f3ee;
+        }
+        .login-logo-text .logo-definition {
+            color: #c8f03b;
+        }
+        .login-logo-text .logo-tagline {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.28);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+        .login-card {
+            background: rgba(255,255,255,0.03);
+            border: 0.5px solid rgba(255,255,255,0.09);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .login-card h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.4rem;
+        }
+
+        .login-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.32);
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.76rem;
+            color: rgba(255,255,255,0.38);
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 0.5px solid rgba(255,255,255,0.12);
+            border-radius: 7px;
+            padding: 0.65rem 0.9rem;
+            color: #f5f3ee;
+            font-size: 0.87rem;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .form-input:focus {
+            border-color: #c8f03b;
+            background: rgba(200,240,59,0.04);
+        }
+
+        .form-input::placeholder { color: rgba(255,255,255,0.18); }
+
+        .form-error {
+            background: rgba(220,60,60,0.08);
+            border: 0.5px solid rgba(220,60,60,0.25);
+            border-radius: 7px;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.82rem;
+            color: #e07070;
+            margin-bottom: 1rem;
+        }
+
+        .field-error {
+            font-size: 0.78rem;
+            color: #e07070;
+            margin-top: 0.3rem;
+        }
+
+        .btn-login {
+            width: 100%;
+            background: #c8f03b;
+            color: #0b0b0f;
+            border: none;
+            border-radius: 7px;
+            padding: 0.72rem;
+            font-size: 0.84rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: opacity 0.15s, transform 0.1s;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-login:hover { opacity: 0.85; }
+        .btn-login:active { transform: scale(0.98); }
+    </style>
+</head>
+<body> 
+    <div class="bg-grain"></div>
+    <div class="bg-grid"></div>
+    <div class="login_siplay">
+        <div class="kiri">
+            <div>
+                <h1 style="font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1rem;">
+                    Kami bikin hal<br>yang <em style="color:#c8f03b;font-style:normal;">benar-benar</em><br>berkesan.
+                </h1>
+                <p style="font-size:0.83rem;color:rgba(255,255,255,0.32);line-height:1.75;max-width:380px;">
+                    Dari strategi hingga produk jadi. UI/UX, branding, dan web development untuk startup dan brand yang ingin tampil beda.
+                </p>
+            </div>
+            <div>
+                <h2>Test login</h2>
+                <p>Username: deniAja<br>Password: MakAnpag1s4maBubur$)</p>
+            </div>
+        </div>
+        <div class="login-wrap">
+            <div class="login-logo">
+                <div style="width:26px;height:26px;border-radius:6px;background:#c8f03b;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:13px;height:13px;">
+                        <rect x="1" y="1" width="5" height="5" rx="1" fill="#0b0b0f"/>
+                        <rect x="8" y="1" width="5" height="5" rx="1" fill="#0b0b0f"/>
+                        <rect x="1" y="8" width="5" height="5" rx="1" fill="#0b0b0f"/>
+                        <rect x="8" y="8" width="5" height="5" rx="1" fill="#0b0b0f"/>
+                    </svg>
+                </div>
+                <div class="login-logo-text">
+                    <div class="logo-name">Depth <span class="logo-definition">Culture</span></div>
+                    <div class="logo-tagline">Creative & Culture</div>
+                </div>
+            </div>
+    
+            <div class="login-card">
+                <h1>Selamat datang</h1>
+                <p>Masuk ke akun kamu untuk melanjutkan.</p>
+    
+                {% if form.non_field_errors %}
+                    <div class="form-error">
+                        {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+                    </div>
+                {% endif %}
+    
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="{{ form.username.id_for_label }}">Username</label>
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                            <div class="field-error">{{ form.username.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.password.id_for_label }}">Password</label>
+                        {{ form.password }}
+                        {% if form.password.errors %}
+                            <div class="field-error">{{ form.password.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn-login">Masuk</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

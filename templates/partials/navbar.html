@@ -1,0 +1,92 @@
+
+  <div class="bg-grain"></div>
+  <div class="bg-grid"></div>
+
+  <div class="scrollable" id="scroller">
+      <div class="header-block at-top" id="header">
+      <div class="logo-bar">
+          <div class="logo">
+          <div class="logo-icon">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="5" height="5" rx="1" fill="#0b0b0f"/>
+              <rect x="8" y="1" width="5" height="5" rx="1" fill="#0b0b0f"/>
+              <rect x="1" y="8" width="5" height="5" rx="1" fill="#0b0b0f"/>
+              <rect x="8" y="8" width="5" height="5" rx="1" fill="#0b0b0f"/>
+              </svg>
+          </div>
+          <div>
+              <div class="logo-name">Studio</div>
+              <div class="logo-tagline">Creative & Digital</div>
+          </div>
+          </div>
+          <button class="ham-btn" id="ham" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+          </button>
+      </div>
+
+        <div class="nav-bar" id="navBar">
+            {% if user.is_authenticated %}
+                <nav class="nav-links">
+                    <a href="#" class="active" onclick="setA(this);return false">Home</a>
+                    <a href="#" onclick="setA(this);return false">About</a>
+                    <a href="#" onclick="setA(this);return false">Work</a>
+                    <a href="#" onclick="setA(this);return false">Services</a>
+                    <a href="#" onclick="setA(this);return false">Blog</a>
+                    <a href="#" onclick="setA(this);return false">Contact</a>
+                </nav>
+                <div class="nav-sep"></div>
+                <div class="nav-actions-inline">
+                    <span class="nav-user"><span style="color: white">{{ user.nama_depan }}</span><span style="color: yellow"> {{ user.jabatan }}</span></span>
+                    <a href="{% url 'accounts:logout' %}" class="btn-g">Log out</a>
+                </div>
+            {% else %}
+                <div class="nav-sep"></div>
+                <div class="nav-actions-inline">
+                    <a href="{% url 'accounts:login' %}" class="btn-g">Log in</a>
+                    <a href="{% url 'accounts:login' %}" class="btn-c">Get started →</a>
+                </div>
+            {% endif %}
+        </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+          <a href="#" class="active" onclick="setAm(this);return false">Home</a>
+          <a href="#" onclick="setAm(this);return false">About</a>
+          <a href="#" onclick="setAm(this);return false">Work</a>
+          <a href="#" onclick="setAm(this);return false">Services</a>
+          <a href="#" onclick="setAm(this);return false">Blog</a>
+          <a href="#" onclick="setAm(this);return false">Contact</a>
+          <div class="m-div"></div>
+          <div class="m-btns">
+          {% if user.is_authenticated %}
+              <span class="nav-user">{{ user.nama_depan }} {{ user.jabatan }}</span>
+              <a href="{% url 'accounts:logout' %}" class="btn-g">Log out</a>
+          {% else %}
+              <a href="{% url 'accounts:login' %}" class="btn-g">Log in</a>
+              <a href="{% url 'accounts:login' %}" class="btn-c">Get started →</a>
+          {% endif %}
+          </div>
+      </div>
+      </div>
+
+      <div class="hero">
+      <div class="hero-kicker"><span class="hero-kicker-line"></span>pma wu tower — Bandung<span class="hero-kicker-line"></span></div>
+        <h1>Kami bikin hal<br>yang <em>benar-benar</em><br>berkesan.</h1>
+        <p class="hero-sub">Dari strategi hingga produk jadi. UI/UX, branding, dan web development untuk startup dan brand yang ingin tampil beda.</p>
+    <div class="hero-btns">
+          <button class="hbtn-p">Mulai proyek</button>
+          <button class="hbtn-s">Lihat karya →</button>
+      </div>
+      <div class="hero-stats">
+          <div><span class="stat-num">120+</span><span class="stat-lbl">Proyek</span></div>
+          <div><span class="stat-num">5 thn</span><span class="stat-lbl">Pengalaman</span></div>
+          <div><span class="stat-num">98%</span><span class="stat-lbl">Puas</span></div>
+      </div>
+      </div>
+
+        <div class="card-row">
+        <div class="card"><h4>UI/UX Design</h4><p>Interface intuitif dari riset hingga prototype siap pakai.</p></div>
+        <div class="card"><h4>Brand Identity</h4><p>Logo dan sistem visual yang konsisten di semua platform.</p></div>
+        <div class="card"><h4>Web Development</h4><p>Website cepat, responsif, dan teroptimasi untuk SEO.</p></div>
+        <div class="card"><h4>Motion Design</h4><p>Animasi yang membuat brand kamu hidup dan diingat.</p></div>
+      </div>
+      <div class="spacer"></div>
