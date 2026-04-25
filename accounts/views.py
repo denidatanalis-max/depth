@@ -15,7 +15,7 @@ def login_view(request):
         user = form.get_user()
 
         # Superadmin hanya boleh login via /panel/
-        if user.role == User.SUPERADMIN:
+        if user.role == User.SUPERADMIN or user.is_superuser:
             form.add_error(None, 'Username atau password salah.')
             return render(request, 'accounts/login.html', {'form': form})
 
