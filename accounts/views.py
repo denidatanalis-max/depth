@@ -1,5 +1,4 @@
 from django.contrib.auth import login, logout
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils.http import url_has_allowed_host_and_scheme
 from .forms import LoginForm
@@ -35,7 +34,6 @@ def login_view(request):
     return render(request, 'accounts/login.html', {'form': form})
 
 
-@login_required
 def logout_view(request):
     logout(request)
     return redirect('/login/')
