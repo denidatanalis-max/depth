@@ -14,7 +14,7 @@ class UserAdmin(BaseUserAdmin):
         (None, {'fields': ('username', 'password')}),
         ('Identitas', {'fields': ('nama_depan', 'nama_panjang', 'jabatan')}),
         ('Role & Akses', {'fields': ('role',)}),
-        ('Status Akun', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
+        ('Status Akun', {'fields': ('is_active',)}),
         ('Tanggal', {'fields': ('last_login', 'date_joined'), 'classes': ('collapse',)}),
     )
 
