@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'dashboard',
+    'django_ratelimit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,6 +134,16 @@ STORAGES = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
+
+# Ratelimit menggunakan LocMemCache — cukup untuk single-process (cPanel)
+# Ganti ke Redis jika pakai multi-worker: 'django.core.cache.backends.redis.RedisCache'
+SILENCED_SYSTEM_CHECKS = ['django_ratelimit.E003', 'django_ratelimit.W001']
 
 AUTH_USER_MODEL = 'accounts.User'
 
