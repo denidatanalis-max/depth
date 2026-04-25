@@ -1,12 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Django is working! 🎉")
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', lambda r: redirect('/accounts/login/', permanent=False)),
+    path('logout/', lambda r: redirect('/accounts/logout/', permanent=False)),
     path('accounts/', include('accounts.urls')),
     path('', include('dashboard.urls')),
 ]
