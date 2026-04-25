@@ -3,17 +3,22 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils.http import url_has_allowed_host_and_scheme
 from .forms import LoginForm
+from .models import User
 
 
 def login_view(request):
     if request.user.is_authenticated:
-        if request.user.role == request.user.SUPERADMIN:
-            return redirect('/panel/')
         return redirect('/')
 
     form = LoginForm(request, data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         user = form.get_user()
+
+        # Superadmin hanya boleh login via /panel/
+        if user.role == User.SUPERADMIN:
+            form.add_error(None, 'Username atau password salah.')
+            return render(request, 'accounts/login.html', {'form': form})
+
         login(request, user)
 
         next_url = request.GET.get('next', '')
@@ -25,8 +30,6 @@ def login_view(request):
         )
         if safe:
             return redirect(next_url)
-        if user.role == user.SUPERADMIN:
-            return redirect('/panel/')
         return redirect('/')
 
     return render(request, 'accounts/login.html', {'form': form})
